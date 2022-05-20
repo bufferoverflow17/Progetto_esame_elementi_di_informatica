@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1653058989 source:c:\users\palum\documents\github\esercitazione_elementi_di_informatica\location_map\location.c
+	<stdio.h>
+	<stdlib.h>
+
