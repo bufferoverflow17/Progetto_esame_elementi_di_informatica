@@ -7,10 +7,9 @@
 
 
 //Funzione lettura file mappa e conversione in matrice di interi
-void reading()
+void reading(int mappa[righe_mappa][colonne_mappa])
 {
     //definizione variabili
-    int mappa[righe_mappa][colonne_mappa];
     int i;
     int j;
     int celle_map[max_length];
@@ -52,3 +51,28 @@ void reading()
     }
 }
 
+
+
+void go (char direzione, int matrice[righe_mappa][colonne_mappa], int x, int y)
+{
+    char nord = "N" , nord2 = "n";
+    char sud = "S" , sud2 = "s";
+    char west = "W" , west2 = "w";
+    char est = "E" , est2 = "e";
+    if (direzione == nord || direzione == nord2 )
+    {
+        y++;
+    }
+    if (direzione == sud || direzione == sud2 )
+    {
+        --y;
+    }
+    if (direzione == est || direzione == est2)
+    {
+        x++;
+    }
+    if (direzione == west || direzione == west2)
+    {
+        --x;
+    }
+}
