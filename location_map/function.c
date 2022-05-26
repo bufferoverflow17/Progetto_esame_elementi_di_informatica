@@ -51,28 +51,32 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     }
 }
 
+typedef struct  {
+    int x;
+    int y;
+}posizione;
 
-
-void go (char direzione, int matrice[righe_mappa][colonne_mappa], int x, int y)
+void go (char direzione, posizione *prova)
 {
-    char nord = "N" , nord2 = "n";
-    char sud = "S" , sud2 = "s";
-    char west = "W" , west2 = "w";
-    char est = "E" , est2 = "e";
+    char nord = 'N' , nord2 = 'n';
+    char sud = 'S' , sud2 = 's';
+    char west = 'W' , west2 = 'w';
+    char est = 'E' , est2 = 'e';
     if (direzione == nord || direzione == nord2 )
     {
-        y++;
+        --prova->y;
+        //printf("%d", prova->y);
     }
     if (direzione == sud || direzione == sud2 )
     {
-        --y;
+        prova->y++;
     }
     if (direzione == est || direzione == est2)
     {
-        x++;
+        --prova->x;
     }
     if (direzione == west || direzione == west2)
     {
-        --x;
+        prova->x++;
     }
 }
