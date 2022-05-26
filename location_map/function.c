@@ -1,43 +1,83 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define max_length 41
-#define max_length_colonna 5
 
-void reading()
+#define max_length 21
+#define righe_mappa 4
+#define colonne_mappa 5
+
+
+//Funzione lettura file mappa e conversione in matrice di interi
+void reading(int mappa[righe_mappa][colonne_mappa])
 {
+    //definizione variabili
+    int i;
+    int j;
+    int celle_map[max_length];
     char *path_map;
     char line[max_length] = {0};
+
+    //lettura file e conversione in stringa
     path_map = "map.txt";
     FILE *file = fopen(path_map, "r");
-    while (fgets(line, max_length, file))
-    {
-    }
-    char *riga_1 = strtok(line, "!");
-    char *riga_2 = strtok(NULL, "!");
-    char *riga_3 = strtok(NULL, "!");
-    char *riga_4 = strtok(NULL, "!");
-    char *1_1= strtok (riga_1, ",");
-    char *1_2= strtok (NULL, ",");
-    char *1_3= strtok (NULL, ",");
-    char *1_4= strtok (NULL, ",");
-    char *1_5= strtok (NULL, ",");
-    char *2_1= strtok (riga_2, ",");
-    char *2_2= strtok (NULL, ",");
-    char *2_3= strtok (NULL, ",");
-    char *2_4= strtok (NULL, ",");
-    char *2_5= strtok (NULL, ",");
-    char *3_1= strtok (riga_3, ",");
-    char *3_2= strtok (NULL, ",");
-    char *3_3= strtok (NULL, ",");
-    char *3_4= strtok (NULL, ",");
-    char *3_5= strtok (NULL, ",");
-    char *4_1= strtok (riga_4, ",");
-    char *4_2= strtok (NULL, ",");
-    char *4_3= strtok (NULL, ",");
-    char *4_4= strtok (NULL,",");
-    char *4_5= strtok (NULL, ",");
-    printf
+    fgets(line, max_length, file);
 
+    //Conversione in array di interi
+    for (i = 0; i < max_length -1; i++)
+    {
+        celle_map[i] = line[i] - '0';
+        printf("%d\n", celle_map[i]);
+
+    }
+
+    //Conversione in matrice di interi
+    for (i = 0; i < righe_mappa ; i++ )
+    {
+        for (j = 0; j < colonne_mappa; j++)
+        {
+            mappa[i][j] = celle_map[j];
+            int incremento = colonne_mappa * (i+1);
+            celle_map[j] = celle_map[j + incremento];
+        }
+    }
+
+    //stampa matrice
+    for (i = 0; i < righe_mappa; i++)
+    {
+        for (j = 0; j < colonne_mappa; j++)
+        {
+            printf("%5d\t", mappa[i][j]);
+        }
+        printf("\n");
+    }
 }
 
+typedef struct  {
+    int x;
+    int y;
+}posizione;
+
+void go (char direzione, posizione *prova)
+{
+    char nord = 'N' , nord2 = 'n';
+    char sud = 'S' , sud2 = 's';
+    char west = 'W' , west2 = 'w';
+    char est = 'E' , est2 = 'e';
+    if (direzione == nord || direzione == nord2 )
+    {
+        --prova->y;
+        //printf("%d", prova->y);
+    }
+    if (direzione == sud || direzione == sud2 )
+    {
+        prova->y++;
+    }
+    if (direzione == est || direzione == est2)
+    {
+        --prova->x;
+    }
+    if (direzione == west || direzione == west2)
+    {
+        prova->x++;
+    }
+}
