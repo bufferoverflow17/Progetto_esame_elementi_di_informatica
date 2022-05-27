@@ -26,7 +26,7 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     for (i = 0; i < max_length -1; i++)
     {
         celle_map[i] = line[i] - '0';
-        printf("%d\n", celle_map[i]);
+        //printf("%d\n", celle_map[i]);
 
     }
 
