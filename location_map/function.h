@@ -10,7 +10,13 @@ typedef struct  {
 }posizione;
 void go (char direzione, posizione *prova);
 
+/*typedef struct {
+    int muro = 1;
+    int oggetto2
 
+}*/
+
+void osserva (posizione *prova, int mappa[righe_mappa][colonne_mappa]);
 
 
 #endif // FUNCTION_H_INCLUDED
