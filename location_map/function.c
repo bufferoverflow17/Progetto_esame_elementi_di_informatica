@@ -65,18 +65,24 @@ void go (char direzione, posizione *prova)
         --prova->y;
         //printf("%d", prova->y);
     }
-    if (direzione == sud || direzione == sud2 )
+    else if (direzione == sud || direzione == sud2 )
     {
         prova->y++;
     }
-    if (direzione == est || direzione == est2)
+    else if (direzione == est || direzione == est2)
     {
         --prova->x;
     }
-    if (direzione == west || direzione == west2)
+    else if (direzione == west || direzione == west2)
     {
         prova->x++;
     }
+    else
+    {
+        printf ("Non puoi proseguire in questa direzione, riprova \n");
+    }
+
+
 }
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)

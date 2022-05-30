@@ -30,3 +30,17 @@
 
 1653662825 c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 
+1653923659 source:c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"function.h"
+
+1653920409 c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+
+1653920409 source:c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"function.h"
+
