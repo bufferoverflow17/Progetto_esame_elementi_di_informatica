@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "function.h"
 
 #define max_length 21
 #define righe_mappa 4
@@ -52,10 +53,6 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     }
 }
 
-typedef struct  {
-    int x;
-    int y;
-}posizione;
 
 void go (char direzione, posizione *prova)
 {
@@ -79,5 +76,17 @@ void go (char direzione, posizione *prova)
     if (direzione == west || direzione == west2)
     {
         prova->x++;
+    }
+}
+
+void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)
+{
+    if (mappa[prova->y][prova->x] == 1)
+    {
+        printf("sei davanti a un muro");
+    }
+    if (mappa[prova->y][prova->x] == 7)
+    {
+        printf("Hai trovato piccone");
     }
 }

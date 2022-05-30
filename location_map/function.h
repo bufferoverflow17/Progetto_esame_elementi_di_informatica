@@ -8,8 +8,10 @@ typedef struct  {
     int x;
     int y;
 }posizione;
+
 void go (char direzione, posizione *prova);
 
+void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
 
 
 
