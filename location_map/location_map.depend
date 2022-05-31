@@ -3,18 +3,19 @@
 	<stdio.h>
 	<stdlib.h>
 
-1653650627 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+1653920118 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"function.h"
 
-1653649747 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+1653920118 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"function.h"
 
-1653552787 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+1653920118 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 
 1654007901 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>
@@ -31,4 +32,18 @@
 1654009047 c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 	<stdbool.h>
 	<stdio.h>
+
+1653923659 source:c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"function.h"
+
+1653920409 c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+
+1653920409 source:c:\users\ryzen\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"function.h"
 
