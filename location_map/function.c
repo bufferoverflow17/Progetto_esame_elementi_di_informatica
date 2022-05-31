@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include "function.h"
 
 #define max_length 21
 #define righe_mappa 4
@@ -53,33 +54,49 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     }
 }
 
-typedef struct  {
-    int x;
-    int y;
-}posizione;
-
 void go (char direzione, posizione *prova)
 {
     char nord = 'N' , nord2 = 'n';
     char sud = 'S' , sud2 = 's';
     char west = 'W' , west2 = 'w';
     char est = 'E' , est2 = 'e';
-    if (direzione == nord || direzione == nord2 )
+
+    if ( prova->x < colonne_mappa || prova->y < righe_mappa )
+{
+
+    if ((direzione == nord || direzione == nord2) && (prova->y != 0))
     {
-        --prova->y;
+         --prova->y;
         //printf("%d", prova->y);
     }
-    if (direzione == sud || direzione == sud2 )
+    else if ((direzione == sud || direzione == sud2) && (prova->y != righe_mappa-1) )
     {
         prova->y++;
     }
-    if (direzione == est || direzione == est2)
+    else if ((direzione == west || direzione == west2) && (prova->x != 0))
     {
         --prova->x;
     }
-    if (direzione == west || direzione == west2)
+    else if ((direzione == est || direzione == est2) && (prova->x != colonne_mappa-1))
     {
         prova->x++;
+    }
+    else
+    {
+        printf ("Non puoi proseguire in questa direzione, riprova \n");
+    }
+}
+}
+
+void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)
+{
+    if (mappa[prova->y][prova->x] == 1)
+    {
+        printf("sei davanti a un muro");
+    }
+    if (mappa[prova->y][prova->x] == 7)
+    {
+        printf("Hai trovato piccone");
     }
 }
 

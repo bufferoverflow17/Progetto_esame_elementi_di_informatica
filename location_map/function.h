@@ -2,7 +2,7 @@
 #define FUNCTION_H_INCLUDED
 #define righe_mappa 4
 #define colonne_mappa 5
-
+#include <stdbool.h>
 #include <stdio.h>
 void reading();
 
@@ -15,27 +15,13 @@ void go (char direzione, posizione *prova);
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
 
+/*typedef struct  {
+    bool x;
+    bool y;
+}posizione;*/
+
 typedef enum { F, T } boolean;
 
-int inventario()
-{
-    boolean piccone, chiave;
-    piccone = F;
-
-    if (piccone == F) {
-        printf("non hai questo oggetto\n");
-    }
-    else {
-        printf("hai un piccone\n");
-    }
-    chiave = 2;
-    if (chiave == F) {
-        printf("non hai questo oggetto\n");
-    }
-    else {
-        printf("hai la chiave\n");
-    }
-}
 
 
 
