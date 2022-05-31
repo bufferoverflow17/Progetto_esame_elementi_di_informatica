@@ -82,3 +82,4 @@ void go (char direzione, posizione *prova)
         prova->x++;
     }
 }
+
