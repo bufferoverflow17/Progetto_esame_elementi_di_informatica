@@ -16,16 +16,19 @@
 
 1653552787 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 
-1653663261 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+1654007901 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<stdbool.h>
 
-1653663261 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+1653663508 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"function.h"
 
-1653662825 c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+1654009047 c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+	<stdbool.h>
+	<stdio.h>
 
