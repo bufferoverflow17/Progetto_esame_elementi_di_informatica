@@ -9,15 +9,15 @@
 	<string.h>
 	"function.h"
 
-1653920118 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+1654022477 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<stdbool.h>
 	"function.h"
 
-1654020367 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+1654022622 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 	<stdbool.h>
-	<stdio.h>
 
 1654010427 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>

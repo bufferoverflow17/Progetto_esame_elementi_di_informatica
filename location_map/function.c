@@ -61,9 +61,6 @@ void go (char direzione, posizione *prova)
     char west = 'W' , west2 = 'w';
     char est = 'E' , est2 = 'e';
 
-    if ( prova->x < colonne_mappa || prova->y < righe_mappa )
-{
-
     if ((direzione == nord || direzione == nord2) && (prova->y != 0))
     {
          --prova->y;
@@ -86,7 +83,7 @@ void go (char direzione, posizione *prova)
         printf ("Non puoi proseguire in questa direzione, riprova \n");
     }
 }
-}
+
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)
 {

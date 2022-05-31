@@ -3,7 +3,6 @@
 #define righe_mappa 4
 #define colonne_mappa 5
 #include <stdbool.h>
-#include <stdio.h>
 void reading();
 
 typedef struct  {
@@ -15,14 +14,10 @@ void go (char direzione, posizione *prova);
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
 
-/*typedef struct  {
-    bool x;
-    bool y;
-}posizione;*/
-
-typedef enum { F, T } boolean;
-
-
+typedef struct  {
+    bool oggetto1;
+    bool oggetto2;
+}raccoglibile;
 
 
 #endif // FUNCTION_H_INCLUDED
