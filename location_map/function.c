@@ -95,5 +95,42 @@ void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)
     {
         printf("Hai trovato piccone");
     }
+
 }
+
+
+void raccogli (int mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
+{
+
+    if (mappa[prova->y][prova->x]== 2)
+    {
+        example->oggetto1 = true;
+    }
+    if (mappa[prova->y][prova->x]==7)
+    {
+        example->oggetto2 =true;
+    }
+
+
+}
+
+void leggi_inventario( raccoglibile *example)
+{
+    if (example->oggetto1 == false)
+    {
+        printf("_\n");
+    }
+    else {
+        printf("Hai un piccone\n");
+     }
+
+    if (example->oggetto2 == false)
+    {
+        printf("_\n");
+    }
+    else {
+        printf("hai la chiave\n");}
+}
+
+
 

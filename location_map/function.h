@@ -14,10 +14,17 @@ void go (char direzione, posizione *prova);
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
 
+
+
 typedef struct  {
     bool oggetto1;
     bool oggetto2;
 }raccoglibile;
+
+void raccogli (int mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example);
+
+
+void leggi_inventario( raccoglibile *example);
 
 
 #endif // FUNCTION_H_INCLUDED
