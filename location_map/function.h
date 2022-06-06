@@ -13,16 +13,20 @@ typedef struct  {
 
 void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prova);
 
-void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
+void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova);
 
 
 
 typedef struct  {
-    bool oggetto1;
-    bool oggetto2;
+    bool chiave_1;
+    bool chiave_2;
+    bool chiave_3;
+    bool secchio;
+    bool sedia;
+    bool tavolo;
+    bool vaso;
 }raccoglibile;
-
-void raccogli (int mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example);
+void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example);
 
 
 void leggi_inventario( raccoglibile *example);

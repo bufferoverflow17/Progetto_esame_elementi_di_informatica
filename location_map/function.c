@@ -9,6 +9,7 @@
 #define colonne_mappa 19
 
 
+
 //Funzione lettura file mappa e conversione in matrice di interi
 void reading(char mappa[righe_mappa][colonne_mappa])
 {
@@ -118,30 +119,65 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
 }
 
 
-void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova)
+void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
 {
-    if (mappa[prova->y][prova->x] == 1)
+    if (mappa[prova->x][prova->y] == '#')
     {
-        printf("sei davanti a un muro");
+        printf("sei davanti a un letto\n");
     }
-    if (mappa[prova->y][prova->x] == 7)
+    if (mappa[prova->y][prova->x] == 'k')
     {
-        printf("Hai trovato piccone");
+        printf("Hai trovato una chiave\n");
     }
-
+    if(mappa[prova->y][prova->x]== 'e')
+    {
+        printf ("hai trovato la seconda chiave\n");
+    }
+    if(mappa[prova->y][prova->x]=='y')
+    {
+        printf("hai trovato l'ultima chiave\n");
+    }
+    if(mappa[prova->y][prova->x]=='U')
+    {
+        printf("hai trovato un secchio\n");
+    }
+    if (mappa[prova->y][prova->x]=='h')
+    {
+        printf ("hai trovato una sedia\n");
+    }
+    if(mappa[prova->y][prova->x]=='O')
+    {
+        printf("stai osservando un tavolo\n");
+    }
+    if(mappa[prova->y][prova->x]=='V')
+    {
+        printf("hai trovato un vaso\n");
+    }
 }
 
 
-void raccogli (int mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
+void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
 {
 
-    if (mappa[prova->y][prova->x]== 2)
+    if (mappa[prova->y][prova->x]== 'k')
     {
-        example->oggetto1 = true;
+        example->chiave_1 =true;
     }
-    if (mappa[prova->y][prova->x]==7)
+    if (mappa[prova->y][prova->x]=='e')
     {
-        example->oggetto2 =true;
+        example->chiave_2=true;
+    }
+    if (mappa[prova->y][prova->x]=='y')
+    {
+       example->chiave_3=true;
+    }
+    if (mappa[prova->y][prova->x]=='V')
+    {
+        example->vaso=true;
+    }
+    if(mappa[prova->y][prova->x]=='h')
+    {
+        example->sedia=true;
     }
 
 
@@ -149,21 +185,57 @@ void raccogli (int mappa [righe_mappa][colonne_mappa], posizione *prova, raccogl
 
 void leggi_inventario( raccoglibile *example)
 {
-    if (example->oggetto1 == false)
+    if (example->chiave_1 == false)
     {
         printf("_\n");
     }
-    else {
-        printf("Hai un piccone\n");
-     }
+    else
+    {
+        printf("Hai la prima chiave\n");
+    }
 
-    if (example->oggetto2 == false)
+    if (example->chiave_2 == false)
     {
         printf("_\n");
     }
-    else {
-        printf("hai la chiave\n");}
+    else
+    {
+        printf("hai la seconda chiave\n");
+    }
+    if (example->chiave_3 == false)
+    {
+        printf ("_\n");
+    }
+    else
+    {
+        printf("hai la terza chiave\n");
+    }
+    if (example->secchio == false)
+    {
+        printf("_\n");
+    }
+    else
+    {
+        printf("hai un secchio");
+    }
+    if(example->vaso == false)
+    {
+      printf("_\n");
+    }
+    else
+    {
+        printf("hai un vaso\n");
+    }
+    if(example->sedia == false)
+    {
+        printf("_\n");
+    }
+    else
+    {
+        printf("hai una sedia\n");
+    }
 }
+
 
 
 

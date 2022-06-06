@@ -17,8 +17,12 @@ int main ()
     coordinate_matrice.x = 3;
     coordinate_matrice.y = 5;
     raccoglibile inventario;
-    inventario.oggetto1 = false;
-    inventario.oggetto2 = false;
+    inventario.chiave_1 = false;
+    inventario.chiave_2 = false;
+    inventario.chiave_3 = false;
+    inventario.secchio = false;
+    inventario.vaso = false;
+
     int comando = 0;
     printf("benvenuto in S.Anna\n Questi sono i comandi che hai:\n 1)go\n2)osserva\n3)raccogli\n4)inventario\n5)esci\n");
     //printf("%d", coordinate_matrice.y);

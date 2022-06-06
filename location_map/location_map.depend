@@ -50,3 +50,19 @@
 	<string.h>
 	"function.h"
 
+1654525705 source:c:\users\asus\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"function.h"
+
+1654525634 c:\users\asus\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+	<stdbool.h>
+
+1654524054 source:c:\users\asus\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"function.h"
+
