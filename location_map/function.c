@@ -72,18 +72,45 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
              printf("Davanti a te c'e' un muro, procedi in un altra direzione\n");
          }
     }
-    else if ((direzione == sud || direzione == sud2) && (prova->y != righe_mappa-1) )
+    else if ((direzione == sud || direzione == sud2) )
     {
-        prova->y++;
+        if  (mappa[prova->x][prova->y !=5] != 'X')
+        {
+           prova->y++;
+        }
+        else if ( mappa[prova->x][prova->y !=5] != ' ')
+        {
+           printf ("Non puoi proseguire in questa direzione\n");
+        }
+        else
+        {
+            printf ("Davanti a te c'e' un muro, procedi in un altra direzione\n");
+        }
     }
-    else if ((direzione == west || direzione == west2) && (prova->x != 0))
+    else if ((direzione == west || direzione == west2) )
     {
-        --prova->x;
+        if (mappa[prova->x != 1][prova->y] != 'X')
+        {
+            --prova->x;
+        }
+        else
+        {
+            printf ("Davanti a te c'e' un muro, procedi in un altra direzione\n");
+        }
+
     }
-    else if ((direzione == est || direzione == est2) && (prova->x != colonne_mappa-1))
+    else if ((direzione == est || direzione == est2) )
     {
-        prova->x++;
+        if (mappa[prova->x -1][prova->y] != 'X')
+       {
+          prova->x++;
+       }
+       else
+        {
+            printf ("Davanti a te c'e' un muro, procedi in un altra direzione\n");
+        }
     }
+
     else
     {
         printf ("Non puoi proseguire in questa direzione, riprova \n");
