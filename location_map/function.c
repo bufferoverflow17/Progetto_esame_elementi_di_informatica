@@ -74,7 +74,7 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
     }
     else if ((direzione == sud || direzione == sud2) )
     {
-        if  (mappa[prova->x][prova->y !=5] != 'X')
+        if  (mappa[prova->x][prova->y ] != 'X')
         {
            prova->y++;
         }
@@ -89,7 +89,7 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
     }
     else if ((direzione == west || direzione == west2) )
     {
-        if (mappa[prova->x != 1][prova->y] != 'X')
+        if (mappa[prova->x -1][prova->y] != 'X')
         {
             --prova->x;
         }
@@ -101,7 +101,7 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
     }
     else if ((direzione == est || direzione == est2) )
     {
-        if (mappa[prova->x -1][prova->y] != 'X')
+        if (mappa[prova->x ][prova->y] != 'X')
        {
           prova->x++;
        }
