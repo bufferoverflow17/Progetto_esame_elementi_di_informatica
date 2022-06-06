@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "function.h"
-#define max_length 10
 #define comando1 1
 #define comando2 2
 #define comando3 3
@@ -12,11 +11,11 @@ int main ()
 {
     //char esempio = 'n';
     char direzione_scelta = 'a';
-    int mappavera [righe_mappa][colonne_mappa];
+    char mappavera [righe_mappa][colonne_mappa];
     reading(mappavera);
     posizione coordinate_matrice;
     coordinate_matrice.x = 3;
-    coordinate_matrice.y = 3;
+    coordinate_matrice.y = 5;
     raccoglibile inventario;
     inventario.oggetto1 = false;
     inventario.oggetto2 = false;
@@ -35,7 +34,7 @@ int main ()
                 printf("In quale direzione vuoi andare?");
                 scanf("%s", &direzione_scelta);
                 go(direzione_scelta, &coordinate_matrice);
-                printf("la posizione attuale e' %d\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
+                printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
                 break;
             case comando2:
                 osserva(mappavera, &coordinate_matrice);

@@ -1,7 +1,8 @@
 #ifndef FUNCTION_H_INCLUDED
 #define FUNCTION_H_INCLUDED
-#define righe_mappa 4
-#define colonne_mappa 5
+#define max_length 134
+#define righe_mappa 7
+#define colonne_mappa 19
 #include <stdbool.h>
 void reading();
 

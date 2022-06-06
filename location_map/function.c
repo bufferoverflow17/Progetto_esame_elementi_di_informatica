@@ -4,18 +4,18 @@
 #include <stdbool.h>
 #include "function.h"
 
-#define max_length 21
-#define righe_mappa 4
-#define colonne_mappa 5
+#define max_length 134
+#define righe_mappa 7
+#define colonne_mappa 19
 
 
 //Funzione lettura file mappa e conversione in matrice di interi
-void reading(int mappa[righe_mappa][colonne_mappa])
+void reading(char mappa[righe_mappa][colonne_mappa])
 {
     //definizione variabili
     int i;
     int j;
-    int celle_map[max_length];
+    //char celle_map[max_length];
     char *path_map;
     char line[max_length] = {0};
 
@@ -25,21 +25,21 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     fgets(line, max_length, file);
 
     //Conversione in array di interi
-    for (i = 0; i < max_length -1; i++)
+    /*for (i = 0; i < max_length -1; i++)
     {
         celle_map[i] = line[i] - '0';
         //printf("%d\n", celle_map[i]);
 
-    }
+    }*/
 
     //Conversione in matrice di interi
     for (i = 0; i < righe_mappa ; i++ )
     {
         for (j = 0; j < colonne_mappa; j++)
         {
-            mappa[i][j] = celle_map[j];
+            mappa[i][j] = line[j];
             int incremento = colonne_mappa * (i+1);
-            celle_map[j] = celle_map[j + incremento];
+            line[j] = line[j + incremento];
         }
     }
 
@@ -48,7 +48,7 @@ void reading(int mappa[righe_mappa][colonne_mappa])
     {
         for (j = 0; j < colonne_mappa; j++)
         {
-            printf("%5d\t", mappa[i][j]);
+            printf("%c ", mappa[i][j]);
         }
         printf("\n");
     }
