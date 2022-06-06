@@ -54,17 +54,23 @@ void reading(char mappa[righe_mappa][colonne_mappa])
     }
 }
 
-void go (char direzione, posizione *prova)
+void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prova)
 {
     char nord = 'N' , nord2 = 'n';
     char sud = 'S' , sud2 = 's';
     char west = 'W' , west2 = 'w';
     char est = 'E' , est2 = 'e';
 
-    if ((direzione == nord || direzione == nord2) && (prova->y != 0))
+    if ((direzione == nord || direzione == nord2))
     {
-         --prova->y;
-        //printf("%d", prova->y);
+         if (mappa[prova->x][prova->y -1] != 'X')
+         {
+             --prova->y;
+         }
+         else
+         {
+             printf("Davanti a te c'e' un muro, procedi in un altra direzione\n");
+         }
     }
     else if ((direzione == sud || direzione == sud2) && (prova->y != righe_mappa-1) )
     {

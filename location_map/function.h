@@ -11,7 +11,7 @@ typedef struct  {
     int y;
 }posizione;
 
-void go (char direzione, posizione *prova);
+void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prova);
 
 void osserva (int mappa [righe_mappa][colonne_mappa], posizione *prova);
 

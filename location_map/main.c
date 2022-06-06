@@ -33,7 +33,7 @@ int main ()
             case comando1:
                 printf("In quale direzione vuoi andare?");
                 scanf("%s", &direzione_scelta);
-                go(direzione_scelta, &coordinate_matrice);
+                go(mappavera, direzione_scelta, &coordinate_matrice);
                 printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
                 break;
             case comando2:
