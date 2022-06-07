@@ -36,7 +36,7 @@ int main ()
     //go(esempio, &coordinate_matrice);
 
     //Inizio del gioco (ciclo while)
-    while(comando != 5) // || gioco finito
+    while(comando != 7) // || gioco finito
     {
         //system("cls");
         //stampa_matrice(mappavera, &coordinate_matrice);
