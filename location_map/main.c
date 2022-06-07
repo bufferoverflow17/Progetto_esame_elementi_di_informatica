@@ -8,6 +8,8 @@
 #define comando3 3
 #define comando4 4
 #define comando5 5
+#define comando6 6
+#define comando7 7
 int main ()
 {
     //Viene definita la varabile (matrice di char) e viene chiamata la funzione reading per convertire il file di testo nella mappa.
@@ -28,7 +30,7 @@ int main ()
     int comando = 0;
 
     //Prima dell'inizio del gioco
-    printf("\nbenvenuto in S.Anna\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)esci\n");
+    printf("benvenuto in S.Anna\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)comandi\n6)mostra mappa\n7)esci\n");
     //printf("%d", coordinate_matrice.y);
     //printf("la posizione attuale e' %d\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
     //go(esempio, &coordinate_matrice);
@@ -37,8 +39,7 @@ int main ()
     while(comando != 5) // || gioco finito
     {
         //system("cls");
-        printf("\nbenvenuto in S.Anna\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)esci\n");
-        stampa_matrice(mappavera, &coordinate_matrice);
+        //stampa_matrice(mappavera, &coordinate_matrice);
         printf("Cosa vuoi fare?\n");
         scanf("%d", &comando);
         switch(comando)
@@ -46,7 +47,9 @@ int main ()
             case comando1:
                 printf("In quale direzione vuoi andare?");
                 scanf("%s", &direzione_scelta);
+                system("cls");
                 go(mappavera, direzione_scelta, &coordinate_matrice);
+                stampa_matrice(mappavera, &coordinate_matrice);
                 printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
                 break;
             case comando2:
@@ -95,8 +98,13 @@ int main ()
                 leggi_inventario(&inventario);
                 break;
             case comando5:
+                printf("Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)comandi\n6)mostra mappa\n7)esci\n");
                 break;
-
+            case comando6:
+                stampa_matrice(mappavera, &coordinate_matrice);
+                break;
+            case comando7:
+                break;
         }
     }
     return 0;
