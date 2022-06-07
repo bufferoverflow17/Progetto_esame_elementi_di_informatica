@@ -45,11 +45,31 @@ void reading(char mappa[righe_mappa][colonne_mappa])
     }
 
     //stampa matrice
-    for (i = 0; i < righe_mappa; i++)
+    /*for (i = 0; i < righe_mappa; i++)
     {
         for (j = 0; j < colonne_mappa; j++)
         {
             printf("%c ", mappa[i][j]);
+        }
+        printf("\n");
+    }*/
+}
+
+void stampa_matrice (char mappa [righe_mappa][colonne_mappa], posizione *prova)
+{
+    int i, j;
+    for (i = 0; i < righe_mappa; i++)
+    {
+        for (j = 0; j < colonne_mappa; j++)
+        {
+            if (i == prova->y && j == prova->x)
+            {
+                printf("%s", "* ");
+            }
+            else
+            {
+               printf("%c ", mappa[i][j]);
+            }
         }
         printf("\n");
     }
@@ -121,35 +141,35 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
 
 void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
 {
-    if (mappa[prova->x][prova->y] == '#')
+    if (mappa[prova->y][prova->x] == '#')
     {
         printf("sei davanti a un letto\n");
     }
-    if (mappa[prova->y][prova->x] == 'k')
+    else if (mappa[prova->y][prova->x] == 'k')
     {
         printf("Hai trovato una chiave\n");
     }
-    if(mappa[prova->y][prova->x]== 'e')
+    else if (mappa[prova->y][prova->x] == 'e')
     {
         printf ("hai trovato la seconda chiave\n");
     }
-    if(mappa[prova->y][prova->x]=='y')
+    else if (mappa[prova->y][prova->x] == 'y')
     {
         printf("hai trovato l'ultima chiave\n");
     }
-    if(mappa[prova->y][prova->x]=='U')
+    else if (mappa[prova->y][prova->x] =='U')
     {
         printf("hai trovato un secchio\n");
     }
-    if (mappa[prova->y][prova->x]=='h')
+    else if (mappa[prova->y][prova->x] == 'h')
     {
         printf ("hai trovato una sedia\n");
     }
-    if(mappa[prova->y][prova->x]=='O')
+    else if(mappa[prova->y][prova->x] == 'O')
     {
         printf("stai osservando un tavolo\n");
     }
-    if(mappa[prova->y][prova->x]=='V')
+    else if (mappa[prova->y][prova->x] == 'V')
     {
         printf("hai trovato un vaso\n");
     }
@@ -159,25 +179,25 @@ void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
 void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
 {
 
-    if (mappa[prova->y][prova->x]== 'k')
+    if (mappa[prova->y][prova->x] == 'k')
     {
-        example->chiave_1 =true;
+        example->chiave_1 = true;
     }
-    if (mappa[prova->y][prova->x]=='e')
+    if (mappa[prova->y][prova->x] == 'e')
     {
-        example->chiave_2=true;
+        example->chiave_2 = true;
     }
-    if (mappa[prova->y][prova->x]=='y')
+    if (mappa[prova->y][prova->x] =='y')
     {
-       example->chiave_3=true;
+       example->chiave_3 = true;
     }
-    if (mappa[prova->y][prova->x]=='V')
+    if (mappa[prova->y][prova->x] == 'V')
     {
-        example->vaso=true;
+        example->vaso = true;
     }
-    if(mappa[prova->y][prova->x]=='h')
+    if(mappa[prova->y][prova->x] == 'h')
     {
-        example->sedia=true;
+        example->sedia = true;
     }
 
 

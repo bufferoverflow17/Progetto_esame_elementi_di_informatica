@@ -11,6 +11,8 @@ typedef struct  {
     int y;
 }posizione;
 
+void stampa_matrice (char mappa [righe_mappa][colonne_mappa], posizione *prova);
+
 void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prova);
 
 void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova);

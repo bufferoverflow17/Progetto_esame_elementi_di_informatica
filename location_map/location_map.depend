@@ -3,20 +3,21 @@
 	<stdio.h>
 	<stdlib.h>
 
-1654510746 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
+1654566606 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<conio.h>
 	"function.h"
 
-1654510962 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
+1654566485 source:c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
 	"function.h"
 
-1654510746 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
+1654563261 c:\users\palum\documents\github\progetto_esame_elementi_di_informatica\location_map\function.h
 	<stdbool.h>
 
 1654010427 source:c:\users\ciroi\documents\github\progetto_esame_elementi_di_informatica\location_map\function.c
