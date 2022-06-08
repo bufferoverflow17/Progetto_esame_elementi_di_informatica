@@ -27,7 +27,13 @@ int main ()
     inventario.chiave_3 = false;
     inventario.secchio = false;
     inventario.vaso = false;
+    inventario.sedia = false;
+    inventario.tavolo = false;
     int comando = 0;
+    int chiave_inserita1 = 0;
+    int chiave_inserita2 = 0;
+    int chiave_inserita3 = 0;
+    char scelta_porta;
 
     //Prima dell'inizio del gioco
     printf("benvenuto in S.Anna\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)comandi\n6)mostra mappa\n7)esci\n");
@@ -36,18 +42,47 @@ int main ()
     //go(esempio, &coordinate_matrice);
 
     //Inizio del gioco (ciclo while)
-    while(comando != 7) // || gioco finito
+    while(comando != 7 && mappavera[coordinate_matrice.y][coordinate_matrice.x] != 'w') // || gioco finito
     {
-        //system("cls");
-        //stampa_matrice(mappavera, &coordinate_matrice);
         printf("Cosa vuoi fare?\n");
         scanf("%d", &comando);
         switch(comando)
         {
             case comando1:
+                //enigma porta
+                if (mappavera[coordinate_matrice.y][coordinate_matrice.x] == '_')
+                {
+                    printf("Hai bisogno di tre chiavi, per aprire questa porta. Inseriscile nell'ordine giusto\n");
+                    if ((inventario.chiave_1 == true) && (inventario.chiave_2 == true) && (inventario.chiave_3 == true))
+                    {
+                        while (!(chiave_inserita1 == 2 && chiave_inserita2 == 1 && chiave_inserita3 == 3) && (scelta_porta != 'n'))
+                        {
+                            printf("Inserisci le chiavi nell'ordine corretto(es.456)\n");
+                            scanf("\n%d%d%d", &chiave_inserita1, &chiave_inserita2, &chiave_inserita3);
+                            while (scelta_porta != 's' && scelta_porta != 'n')
+                            {
+                                printf("La risposta non è corretta, vuoi rintentare(rispondi s/n)\n?");
+                                scanf("\n%c", &scelta_porta);
+                            }
+                        }
+                        if (scelta_porta == 'n')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            go(mappavera, direzione_scelta, &coordinate_matrice);
+                        }
+                    }
+                    else
+                    {
+                        printf("Non hai raccolto tutte le chiavi\n");
+                    }
+                }
+                //esecuzione del comando indipendentemente dalla posizione
                 printf("In quale direzione vuoi andare?");
                 scanf("%s", &direzione_scelta);
-                system("cls");
+                system("cls"); //serve a pulire la console ogni bolta che viene chiamata la funzione go che ti fa muovere. Questa funzione scritta cosi funziona solo per windows
                 go(mappavera, direzione_scelta, &coordinate_matrice);
                 stampa_matrice(mappavera, &coordinate_matrice);
                 printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);

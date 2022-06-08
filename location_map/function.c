@@ -143,15 +143,15 @@ void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
     }
     else if (mappa[prova->y][prova->x] == 'k')
     {
-        printf("Hai trovato una chiave\n");
+        printf("Hai trovato la seconda chiave\n");
     }
     else if (mappa[prova->y][prova->x] == 'e')
     {
-        printf ("hai trovato la seconda chiave\n");
+        printf ("hai trovato la prima chiave\n");
     }
     else if (mappa[prova->y][prova->x] == 'y')
     {
-        printf("hai trovato l'ultima chiave\n");
+        printf("hai trovato la terza chiave\n");
     }
     else if (mappa[prova->y][prova->x] =='U')
     {
@@ -179,25 +179,29 @@ void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
 void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
 {
 
-    if ((mappa[prova->y][prova->x] == 'k') && (example->chiave_1 == false))
+    if ((mappa[prova->y][prova->x] == 'e') && (example->chiave_1 == false))
     {
         example->chiave_1 = true;
     }
-    if ((mappa[prova->y][prova->x] == 'e') &&  (example->chiave_2 == false))
+    else if ((mappa[prova->y][prova->x] == 'k') &&  (example->chiave_2 == false))
     {
         example->chiave_2 = true;
     }
-    if ((mappa[prova->y][prova->x] =='y') &&  (example->chiave_3 == false))
+    else if ((mappa[prova->y][prova->x] =='y') &&  (example->chiave_3 == false))
     {
        example->chiave_3 = true;
     }
-    if ((mappa[prova->y][prova->x] == 'V') &&  (example->vaso == false))
+    else if ((mappa[prova->y][prova->x] == 'V') &&  (example->vaso == false))
     {
         example->vaso = true;
     }
-    if ( (mappa[prova->y][prova->x] == 'h') && (example->sedia == false) )
+    else if ( (mappa[prova->y][prova->x] == 'h') && (example->sedia == false) )
     {
         example->sedia = true;
+    }
+    else if ((mappa[prova->y][prova->x] == 'O') || (mappa[prova->y][prova->x] == '.') || (mappa[prova->y][prova->x] == '#'))
+    {
+        printf("Non puoi raccogliere questo oggetto\n");
     }
     else
     {
