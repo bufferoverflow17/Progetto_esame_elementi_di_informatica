@@ -19,12 +19,12 @@ int main ()
     //inizializzazione variabili e strutture
     char direzione_scelta = 'a';
     posizione coordinate_matrice;
-    coordinate_matrice.x = 15;
-    coordinate_matrice.y = 4;
+    coordinate_matrice.x = 3;
+    coordinate_matrice.y = 5;
     raccoglibile inventario;
-    inventario.chiave_1 = true;
-    inventario.chiave_2 = true;
-    inventario.chiave_3 = true;
+    inventario.chiave_1 = false;
+    inventario.chiave_2 = false;
+    inventario.chiave_3 = false;
     inventario.secchio = false;
     inventario.vaso = false;
     inventario.sedia = false;
@@ -44,8 +44,15 @@ int main ()
     //Inizio del gioco (ciclo while)
     while(comando != 7 && mappavera[coordinate_matrice.y][coordinate_matrice.x] != 'w') // || gioco finito
     {
-        printf("Cosa vuoi fare?\n");
+        fflush(stdin);
+        printf("Cosa vuoi fare (current command: %d)?\n", comando);
         scanf("%d", &comando);
+        if (!(comando >= 1 && comando <= 7))
+        {
+            printf("Comando non valido");
+            continue;
+        }
+
         switch(comando)
         {
             case comando1:
@@ -104,11 +111,14 @@ int main ()
                         printf("Non hai raccolto tutte le chiavi\n");
                     }
                 }
-                //esecuzione del comando indipendentemente dalla posizione
-                system("cls"); //serve a pulire la console ogni bolta che viene chiamata la funzione go che ti fa muovere. Questa funzione scritta cosi funziona solo per windows
-                go(mappavera, direzione_scelta, &coordinate_matrice);
-                stampa_matrice(mappavera, &coordinate_matrice);
-                printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
+                else
+                {
+                     //esecuzione del comando indipendentemente dalla posizione
+                    system("cls"); //serve a pulire la console ogni bolta che viene chiamata la funzione go che ti fa muovere. Questa funzione scritta cosi funziona solo per windows
+                    go(mappavera, direzione_scelta, &coordinate_matrice);
+                    stampa_matrice(mappavera, &coordinate_matrice);
+                    printf("la posizione attuale e' %c\n", mappavera[coordinate_matrice.y][coordinate_matrice.x]);
+                }
                 break;
             case comando2:
                 osserva(mappavera, &coordinate_matrice);
@@ -127,7 +137,7 @@ int main ()
                     }
                 }
                 //enigma raccolta seconda chiave
-                if (mappavera[coordinate_matrice.y][coordinate_matrice.x] == 'k')
+                else if (mappavera[coordinate_matrice.y][coordinate_matrice.x] == 'k')
                 {
                     if (inventario.sedia == false)
                     {
@@ -139,7 +149,7 @@ int main ()
                     }
                 }
                 //enigma raccolta terza chiave
-                if (mappavera[coordinate_matrice.y][coordinate_matrice.x] == 'y')
+                else if (mappavera[coordinate_matrice.y][coordinate_matrice.x] == 'y')
                 {
                     if (inventario.vaso == false)
                     {
@@ -150,7 +160,10 @@ int main ()
                         raccogli(mappavera, &coordinate_matrice, &inventario);
                     }
                 }
-                raccogli(mappavera, &coordinate_matrice, &inventario);
+                else
+                {
+                     raccogli(mappavera, &coordinate_matrice, &inventario);
+                }
                 break;
             case comando4:
                 leggi_inventario(&inventario);

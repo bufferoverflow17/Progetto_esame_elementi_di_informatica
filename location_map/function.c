@@ -178,8 +178,11 @@ void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
 
 void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccoglibile *example)
 {
-
-    if ((mappa[prova->y][prova->x] == 'e') && (example->chiave_1 == false))
+    if ((mappa[prova->y][prova->x] == 'U') && (example->secchio == false))
+    {
+        example->secchio = true;
+    }
+    else if ((mappa[prova->y][prova->x] == 'e') && (example->chiave_1 == false))
     {
         example->chiave_1 = true;
     }
@@ -230,6 +233,7 @@ void leggi_inventario( raccoglibile *example)
     {
         printf("hai la seconda chiave\n");
     }
+
     if (example->chiave_3 == false)
     {
         printf ("_\n");
@@ -238,14 +242,16 @@ void leggi_inventario( raccoglibile *example)
     {
         printf("hai la terza chiave\n");
     }
+
     if (example->secchio == false)
     {
         printf("_\n");
     }
     else
     {
-        printf("hai un secchio");
+        printf("hai un secchio\n");
     }
+
     if(example->vaso == false)
     {
       printf("_\n");
@@ -254,6 +260,7 @@ void leggi_inventario( raccoglibile *example)
     {
         printf("hai un vaso\n");
     }
+
     if(example->sedia == false)
     {
         printf("_\n");
