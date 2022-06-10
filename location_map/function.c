@@ -95,7 +95,7 @@ void go (char mappa[righe_mappa][colonne_mappa], char direzione, posizione *prov
     }
     else if ((direzione == sud || direzione == sud2) )
     {
-        if  ((mappa[prova->y +1][prova->x] != 'X') && ( mappa[prova->y +1][prova->x] != ' '))
+        if  ((mappa[prova->y +1][prova->x] != 'X') && ( mappa[prova->y +1][prova->x] != '/'))
         {
            prova->y++;
         }
