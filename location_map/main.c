@@ -49,36 +49,36 @@ int main ()
         scanf("%d", &comando);
         if (!(comando >= 1 && comando <= 7))
         {
-            printf("Comando non valido");
+            printf("Comando non valido\n");
             continue;
         }
 
         switch(comando)
         {
             case comando1:
-                printf("In quale direzione vuoi andare?");
+                printf("In quale direzione vuoi andare?\n");
                 scanf("%s", &direzione_scelta);
 
                 //enigma porta
                 if ((mappavera[coordinate_matrice.y][coordinate_matrice.x] == '_') && ((direzione_scelta == 's') || (direzione_scelta == 'S')))
                 {
-                    printf("Hai bisogno di tre chiavi, per aprire questa porta. Inseriscile nell'ordine giusto\n");
+                    printf("Hai bisogno di tre chiavi, per aprire questa porta\n");
                     if ((inventario.chiave_1 == true) && (inventario.chiave_2 == true) && (inventario.chiave_3 == true))
                     {
                         while (!(chiave_inserita1 == 2 && chiave_inserita2 == 1 && chiave_inserita3 == 3) && (scelta_porta != 'n'))
                         {
                             scelta_porta = 'a';
-                            printf("Inserisci le chiavi nell'ordine corretto(es.456)\n");
+                            printf("Inserisci le chiavi nell'ordine corretto \ncome per esempio:\n4\n5\n6\ntocca a te ora\n");
                             scanf("%d%d%d", &chiave_inserita1, &chiave_inserita2, &chiave_inserita3);
                             if ((chiave_inserita1 > 3 || chiave_inserita1 < 1) || (chiave_inserita2 > 3 || chiave_inserita2 < 1) || (chiave_inserita3 > 3 || chiave_inserita3 < 1))
                             {
-                                printf("Non hai inserito i valori esatti(sono accettate solo combinazioni di 1,2,3, riprova:");
+                                printf("Non hai inserito i valori esatti(sono accettate solo combinazioni di 1,2,3, riprova: \n");
                             }
                             else
                             {
                                 while (scelta_porta != 's' && scelta_porta != 'n')
                                 {
-                                    if (chiave_inserita1 == 2 && chiave_inserita2 == 1 && chiave_inserita3 == 3)
+                                    if (chiave_inserita1 == 2 && chiave_inserita2 == 1  && chiave_inserita3 == 3)
                                     {
                                         scelta_porta = 's';
                                     }
@@ -129,7 +129,7 @@ int main ()
                 {
                     if (inventario.secchio == false)
                     {
-                        printf("Questa chiave è incandescente, non puoi raccoglierla a mani nude");
+                        printf("Questa chiave è incandescente, non puoi raccoglierla a mani nude\n");
                     }
                     else
                     {
@@ -141,7 +141,7 @@ int main ()
                 {
                     if (inventario.sedia == false)
                     {
-                        printf("Questa chiave si trova troppo in alto, non riesci a raggiungerla");
+                        printf("Questa chiave si trova troppo in alto, non riesci a raggiungerla\n");
                     }
                     else
                     {
@@ -153,7 +153,7 @@ int main ()
                 {
                     if (inventario.vaso == false)
                     {
-                        printf("Questa chiave si trova troppo in alto, non riesci a raggiungerla");
+                        printf("Questa chiave si trova troppo in alto, non riesci a raggiungerla\n");
                     }
                     else
                     {

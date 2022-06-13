@@ -167,7 +167,7 @@ void osserva (char mappa [righe_mappa][colonne_mappa], posizione *prova)
     }
     else if (mappa[prova->y][prova->x] == 'V')
     {
-        printf("hai trovato un vaso\n");
+        printf("hai trovato un vaso...\nsembra esserci una piccola chiave al suo interno\n");
     }
     else if (mappa[prova->y][prova->x] == '.')
     {
@@ -181,26 +181,32 @@ void raccogli (char mappa [righe_mappa][colonne_mappa], posizione *prova, raccog
     if ((mappa[prova->y][prova->x] == 'U') && (example->secchio == false))
     {
         example->secchio = true;
+        printf("Hai raccolto il secchio\n");
     }
     else if ((mappa[prova->y][prova->x] == 'e') && (example->chiave_1 == false))
     {
         example->chiave_1 = true;
+        printf("hai raccolto la prima chiave\n");
     }
     else if ((mappa[prova->y][prova->x] == 'k') &&  (example->chiave_2 == false))
     {
         example->chiave_2 = true;
+        printf("Hai raccolto la seconda chiave\n");
     }
     else if ((mappa[prova->y][prova->x] =='y') &&  (example->chiave_3 == false))
     {
        example->chiave_3 = true;
+       printf("Hai raccolto la terza chiave\n");
     }
     else if ((mappa[prova->y][prova->x] == 'V') &&  (example->vaso == false))
     {
         example->vaso = true;
+        printf("Hai raccolto la piccola chiave al suo interno\n");
     }
     else if ( (mappa[prova->y][prova->x] == 'h') && (example->sedia == false) )
     {
         example->sedia = true;
+        printf("Hai raccolto la sedia\n");
     }
     else if ((mappa[prova->y][prova->x] == 'O') || (mappa[prova->y][prova->x] == '.') || (mappa[prova->y][prova->x] == '#'))
     {
@@ -258,7 +264,7 @@ void leggi_inventario( raccoglibile *example)
     }
     else
     {
-        printf("hai un vaso\n");
+        printf("hai una piccola chiave\n");
     }
 
     if(example->sedia == false)
