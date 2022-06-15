@@ -37,7 +37,7 @@ int main ()
     char scelta_porta;
 
     //Prima dell'inizio del gioco
-    printf("benvenuto in S.Anna\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)comandi\n6)mostra mappa\n7)esci\n");
+    printf("benvenuto in S.Anna.\nSei in una casa fatta di tre stanze. Col comando 6 puoi visualizzare la mappa.\nTu sei rappresentato da *, e il tuo obbiettivo e' arrivare nella cella 'w' in fondo a destra.\nPuoi muoverti, osservare, raccogliere tutte le celle e gli oggetti raccolti saranno visualizzato in un inventario.\nIn bocca al lupo...\n Questi sono i comandi che hai:\n1)go\n2)osserva\n3)raccogli\n4)inventario\n5)comandi\n6)mostra mappa\n7)esci\n");
 
     //Inizio del gioco (ciclo while)
     while(comando != 7 && mappavera[coordinate_matrice.y][coordinate_matrice.x] != 'w') // || gioco finito
